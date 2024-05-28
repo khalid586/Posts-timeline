@@ -6,14 +6,14 @@ import Comment from './Comment';
 
 function Singlepost({post,users,comments}) {
     const {title,body,userId,id} = post;
-    const {name} = users.find(currUser => userId == currUser.id);
-    const postComments = comments.filter(comment => comment.postId == id)
+    const {name} = users.find(currUser => userId === currUser.id);
+    const postComments = comments.filter(comment => comment.postId === id)
     
     console.log(postComments)
     const [showComments,setShowComments] = useState(false);
     
     return (
-        <div className="card mx-4 md:w-[70vw] lg:w-[50vw] bg-base-100 shadow border-b-4 border-l-4 border-l-red-500 border-b-red-500 hover:border-l-green-500 hover:border-b-green-500 duration-500">
+        <div className="card mx-4 md:w-[70vw] xl:w-[50vw] bg-base-100 shadow border-b-4 border-l-4 border-l-red-500 border-b-red-500 hover:border-l-green-500 hover:border-b-green-500 duration-500">
             <div className="card-body">
                 <p className='font-bold text-xs'>#{id}</p>
                 <h2 className="font-bold text-3xl flex items-center gap-2 mx-4">{title}</h2>
